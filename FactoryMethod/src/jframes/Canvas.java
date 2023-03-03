@@ -14,18 +14,12 @@ import model.Figure;
 
 public class Canvas extends JPanel implements MouseListener, KeyListener{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8509303623473043255L;
 	
 	private ArrayList<Figure> figuresList;
 	private FigureFactory factory;
     
     public Canvas() { // Canvas constructor
-    	/*
-    	 * 
-    	 * */
     	setFiguresList(new ArrayList<>());
 		setFactory(new RandomFigureFactory());
         addMouseListener(this);
@@ -35,7 +29,7 @@ public class Canvas extends JPanel implements MouseListener, KeyListener{
     @Override
     public void paint(Graphics g) {
     	/*
-    	 * 
+    	 * Function that paint all the figures in the ArrayList on the JPanel
     	 * */
     	super.paint(g);
     	for (Figure objFigure: figuresList) {
@@ -47,7 +41,8 @@ public class Canvas extends JPanel implements MouseListener, KeyListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		/*
-		 * 
+		 * Function that detects when pressing the left mouse click
+		 * Left-click to create a new figure at the mouse position
 		 * */
 		if (e.getButton() == 1) {
 			getFiguresList().add(getFactory().createFigure(e.getX()-10, e.getY()-10));
@@ -86,7 +81,9 @@ public class Canvas extends JPanel implements MouseListener, KeyListener{
 		/*
 		 * 
 		 * */
+		System.out.println(e.getKeyCode());
 		if(KeyEvent.VK_T == e.getKeyCode()) {
+			System.out.println("Triangles will be created");
 			setFactory(new TriangleFactory());
 		}
 	}

@@ -4,7 +4,8 @@ import java.awt.Graphics;
 
 public class Circle implements Figure{
 	/*
-	 * 
+	 * The class Circle is used to set characteristics of a circle
+	 * The methods inherited from the Figure interface are implemented in order to draw the object in a JPanel.
 	 * */
 	
 	private static final int radius = 20;
