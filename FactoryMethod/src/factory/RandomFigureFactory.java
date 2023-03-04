@@ -23,7 +23,7 @@ public class RandomFigureFactory implements FigureFactory{
 		 * 
 		 * */
 		double rand = getRandom(); // random number to define which figure will be created
-		// System.out.println(rand);
+		System.out.println(rand);
 		
 		if (rand <= 0.33) {
 			return new Square(x, y);

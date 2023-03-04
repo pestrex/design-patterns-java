@@ -17,7 +17,7 @@ public class TriangleFactory implements FigureFactory{
 	@Override
 	public Figure createFigure(int x, int y) {
 		/*
-		 * Creates and returns an object of type circle
+		 * Creates and returns an object of type triangle
 		 * */
 		return new Triangle(x, y);
 	}

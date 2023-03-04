@@ -1,8 +1,6 @@
 package jframes;
 
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -12,18 +10,19 @@ import javax.swing.JPanel;
 import factory.*;
 import model.Figure;
 
-public class Canvas extends JPanel implements MouseListener, KeyListener{
-	
+public class Canvas extends JPanel implements MouseListener{
+	/*
+	 * The class Canvas is a JPanel used to generate figures in the window
+	 * */
 	private static final long serialVersionUID = 8509303623473043255L;
 	
 	private ArrayList<Figure> figuresList;
-	private FigureFactory factory;
+	protected static FigureFactory factory;
     
     public Canvas() { // Canvas constructor
     	setFiguresList(new ArrayList<>());
 		setFactory(new RandomFigureFactory());
         addMouseListener(this);
-        addKeyListener(this);
     }
     
     @Override
@@ -68,29 +67,6 @@ public class Canvas extends JPanel implements MouseListener, KeyListener{
 	@Override
 	public void mouseExited(MouseEvent e) {
 		
-	}
-	
-	// KeyListener Methods
-	@Override
-	public void keyTyped(KeyEvent e) {
-		
-	}
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		/*
-		 * 
-		 * */
-		System.out.println(e.getKeyCode());
-		if(KeyEvent.VK_T == e.getKeyCode()) {
-			System.out.println("Triangles will be created");
-			setFactory(new TriangleFactory());
-		}
-	}
-
-	@Override
-	public void keyReleased(KeyEvent e) {
-
 	}
 
 	// Setters & Getters
