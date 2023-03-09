@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author pvill
+ *
+ */
+module Composite {
+}
