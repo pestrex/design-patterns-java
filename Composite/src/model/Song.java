@@ -6,8 +6,9 @@ public class Song implements IComponent{
 	String artist;
 	float speed;
 	
-	public Song(String songName) { // Song constructor
+	public Song(String songName, String artist) { // Song constructor
 		this.songName = songName;
+		this.artist = artist;
 	}
 
 	@Override
